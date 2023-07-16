@@ -24,7 +24,7 @@ layout_module = reload_module('modules.layout')
 utils_module = reload_module('modules.utils')
 sidebar_module = reload_module('modules.sidebar')
 
-st.set_page_config(layout="wide", page_icon="💬", page_title="JinLim | Chat-Bot 🤖")
+st.set_page_config(layout="wide", page_icon="💬", page_title="JinLim | Generative AI 🤖")
 
 layout, sidebar, utils = Layout(), Sidebar(), Utilities()
 
