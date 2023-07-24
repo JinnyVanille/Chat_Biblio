@@ -9,7 +9,6 @@ import langchain
 
 langchain.verbose = False
 
-
 class Chatbot:
 
     def __init__(self, model_name, temperature, vectors):

@@ -4,6 +4,7 @@ import pandas as pd
 from dotenv import load_dotenv 
 import json
 import streamlit as st
+import matplotlib.pyplot as plt
 load_dotenv()
 import os
 from modules.history import ChatHistory
@@ -79,13 +80,13 @@ def ask_agent(agent, query):
            {"answer": "Your answer goes here"}
 
         For example:
-           {"answer": "The Product with the highest Orders is '15143Exfo'"}
+           {"answer": "The Publication Source with the highest citation count is '15143Exfo'"}
 
         5. If the answer is not known or available, respond with:
            {"answer": "I do not know."}
 
         Return all output as a string. Remember to encase all strings in the "columns" list and data list in double quotes. 
-        For example: {"columns": ["Publication_Source", "Orders"], "data": [["51993Masc", 191], ["49631Foun", 152]]}
+        For example: {"columns": ["Publication_Source", "Documents"], "data": [["51993Masc", 191], ["49631Foun", 152]]}
 
         Now, let's tackle the query step by step. Here's the query for you to work on: 
         """
@@ -125,17 +126,33 @@ def write_answer(response_dict: dict):
         st.write(response_dict["answer"])
 
     # Check if the response is a bar chart.
-    # Check if the response is a bar chart.
     if "bar" in response_dict:
         data = response_dict["bar"]
         try:
             df_data = {
-                    col: [x[i] if isinstance(x, list) else x for x in data['data']]
-                    for i, col in enumerate(data['columns'])
-                }       
+                col: [x[i] if isinstance(x, list) else x for x in data['data']]
+                for i, col in enumerate(data['columns'])
+            }
             df = pd.DataFrame(df_data)
             df.set_index("Publication_Source", inplace=True)
-            st.bar_chart(df)
+
+            # Plot the bar chart directly with df.plot.bar() to customize x-axis labels
+            ax = df.plot.bar(rot=10, fontsize=8, figsize=(15, 10))  # Adjust figsize as needed
+
+            # Customize other aspects of the plot (e.g., labels, title, etc.) if desired
+            plt.xlabel("Publication Source", fontsize=15)
+            plt.ylabel("No. of Citations", fontsize=15)
+            plt.title("Most Local Cited Publication Sources", fontsize=25)
+            plt.legend(title="No. of local citations", title_fontsize=10)
+
+            # Annotate each bar with its value
+            for p in ax.patches:
+                ax.annotate(str(p.get_height()), (p.get_x() + p.get_width() / 2., p.get_height()),
+                            ha='center', va='center', xytext=(5, 10), textcoords='offset points')
+
+            st.pyplot(ax.figure)
+            plt.show()  # Display the plot
+
         except ValueError:
             print(f"Couldn't create DataFrame from data: {data}")
 
@@ -156,6 +173,7 @@ def write_answer(response_dict: dict):
         data = response_dict["table"]
         df = pd.DataFrame(data["data"], columns=data["columns"])
         st.table(df)
+
 st.title("👨‍💻 Talk with your CSV")
 
 st.write("Please upload your CSV file below.")

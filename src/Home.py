@@ -41,7 +41,7 @@ st.markdown("---")
 #Jinny's Pages
 st.subheader("🚀 JinLim's Pages")
 st.write("""
-- **Jinny-Visualize**: Chat on your data (PDF, TXT,CSV) with a | for comparison | visualize between variables | works with Langchain (https://github.com/facebookresearch/faiss) (index useful parts(max 4) for respond to the user) | works with [ConversationalRetrievalChain](https://python.langchain.com/en/latest/modules/chains/index_examples/chat_vector_db.html)
+- **Jinny-Visualize**: Chat on your data (PDF, TXT,CSV) | bar, line and table | visualize between variables | works with Langchain |
 - **Jinny-Chat**: General Chat on data (PDF, TXT,CSV) with a [vectorstore](https://github.com/facebookresearch/faiss) (index useful parts(max 4) for respond to the user) | works with [ConversationalRetrievalChain](https://python.langchain.com/en/latest/modules/chains/index_examples/chat_vector_db.html)
 - **Jinny-Sheet** (beta): Chat on tabular data (CSV) | for precise information | process the whole file | works with [CSV_Agent](https://python.langchain.com/en/latest/modules/agents/toolkits/examples/csv.html) + [PandasAI](https://github.com/gventuri/pandas-ai) for data manipulation and graph creation
 """)

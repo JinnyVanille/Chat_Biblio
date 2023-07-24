@@ -68,3 +68,14 @@ class PandasAgent:
                 message(message_text, is_user=True, key=f"{i}_user")
             else:
                 message(message_text, key=f"{i}")
+
+
+
+
+
+
+
+
+
+
+
