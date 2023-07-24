@@ -9,7 +9,7 @@ JinLim the GenerativeAI.
  
 ## Quick Start 🚀
 
-[![Chat_Biblio](https://img.shields.io/static/v1?label=JinLim-Chatbot&message=Visit%20Website&color=ffffff&labelColor=ADD8E6&style=for-the-badge)](https://robby-chatbot.streamlit.app/)
+[![Chat_Biblio](https://img.shields.io/static/v1?label=JinLim-Chatbot&message=Visit%20Website&color=ffffff&labelColor=ADD8E6&style=for-the-badge)](https://jinlim-chat.streamlit.app/)
 
 
 ## Running Locally 💻
