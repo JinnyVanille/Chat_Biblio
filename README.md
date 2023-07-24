@@ -22,7 +22,7 @@ Follow these steps to set up and run the service locally :
 ### Installation as per reference
 Clone the repository :
 
-`git clone https://github.com/yvann-hub/Robby-chatbot.git`
+`git clone https://github.com/JinnyVanille/Chat_Biblio.git`
 
 
 Navigate to the project directory :
@@ -48,6 +48,6 @@ Launch the chat service locally :
 #### That's it! The service is now up and running locally. 🤗
 
 ## Contributing 🙌
-If you want to contribute to this project, please open an issue, submit a pull request or contact me at barbot.yvann@gmail.com (:
+If you want to contribute to this project, please open an issue, submit a pull request or contact me at 1997foo@gmail.com (:
 
 
